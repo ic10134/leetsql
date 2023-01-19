@@ -6,7 +6,7 @@ select
 from
 (select
     salary,
-    rank() over(order by salary desc) as rank_desc
+    dense_rank() over(order by salary desc) as rank_desc
 from employee) cor_qry
 where rank_desc=2
 ;
